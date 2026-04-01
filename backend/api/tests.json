@@ -1,0 +1,34 @@
+{
+  "tests": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "path": "/health"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "status": "ok"
+      }
+    },
+    {
+      "name": "Register User",
+      "request": {
+        "method": "POST",
+        "path": "/api/auth/register",
+        "body": {
+          "username": "testuser",
+          "displayName": "مستخدم تجريبي",
+          "passwordHash": "abc123hashedpassword",
+          "salt": "randomsalt123",
+          "publicKey": "base64encodedpublickey==",
+          "signingPublicKey": "base64encodedsigningkey=="
+        }
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      }
+    }
+  ]
+}
